@@ -18,16 +18,17 @@ avatar: https://scontent-a-lga.xx.fbcdn.net/hphotos-ash2/v/t1.0-9/375685_1015284
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble: 
-  email: 
+  email: cghazanfar10@gmail.com
   facebook: 
   flickr: 
   github: https://github.com/cyzanfar
   instagram: 
-  linkedin: 
+  linkedin: https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile
   pinterest: 
   rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
-  twitter: jekyllrb
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+  twitter: 
+  stackoverflow: users/3307520/cyzanfar
+  # your stackoverflow profile, e.g. "users/50476/bart-kiers"
 
 # Your disqus shortname, entering this will enable commenting on posts
 disqus: 
