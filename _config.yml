@@ -6,7 +6,7 @@
 name: Cyrus Ghazanfar
 
 # Short bio or description (displayed in the header)
-description: Teach how to learn learn how to teach. Code is life...
+description: Teach how to learn, learn how to teach.
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://scontent-a-lga.xx.fbcdn.net/hphotos-ash2/v/t1.0-9/375685_10152842676925276_1845313564_n.jpg?oh=325b431dddb2405c7a5ccc4912baed57&oe=554A32B8
@@ -21,7 +21,7 @@ footer-links:
   email: 
   facebook: 
   flickr: 
-  github: barryclark/jekyll-now
+  github: https://github.com/cyzanfar
   instagram: 
   linkedin: 
   pinterest: 
