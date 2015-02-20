@@ -13,6 +13,7 @@ Scraping is the act of automating the process of extracting data from the intern
 Let's take a more interesting example than the Senior Centers in New York City. Let's say we want to extract the top 250 movie from [IMDB](http://www.imdb.com/chart/top?ref_=nv_ch_250_4)
 
 Here is how:
+
 Create a file called ```top_250_movie_imdb```. In the file, you need a way for your program to use the [Nokogiri](http://www.nokogiri.org/) library. At the top of your file ```require``` the Nokogiri gem as well as the ```open-uri``` gem, which is already pre-installed when you intall Ruby.
 
 ```Ruby
@@ -31,6 +32,7 @@ html = File.read('fixtures/movie.html')
 	imdb = Nokogiri::HTML(open("http://www.imdb.com/chart/top"))
 ```
 Now, we need to declare our hash that will them contain the different element we want to scrap from this page:
+
 
 ```Ruby
 movie = {}
@@ -62,4 +64,4 @@ Here is how the first row looks like:
     "http://ia.media-imdb.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX34_CR0,0,34,50_AL_.jpg",
    :date=>"(1994)",
    :rating=>"9.2"}
-   ```
+```
