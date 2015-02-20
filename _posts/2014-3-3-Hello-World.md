@@ -58,6 +58,7 @@ movie = {}
 Here we iterated through each table row making the title of the movie a key and then another nested array containing the different key value pair like rating, a link to the image of the movie and the year it came out.
 
 Here is how the first row looks like:
+
 ```Ruby
 {"The Shawshank Redemption"=>
   {:image_link=>
