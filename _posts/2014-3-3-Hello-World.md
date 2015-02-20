@@ -30,7 +30,7 @@ require 'Nokogiri'
 require 'open-uri'
 	imdb = Nokogiri::HTML(open("http://www.imdb.com/chart/top"))
 ```
-Now, we need to declare our hash that will them contain the different element we want to scrap from this page:
+Now, we need to declare our hash that will then contain the different element we want to scrap from this page:
 
 
 ```Ruby
@@ -40,9 +40,9 @@ movie = {}
  Go to the [IMDB top 250 movie page](http://www.imdb.com/chart/top?ref_=nv_ch_250_4) and start inspecting the elements (under developer tools).
 
  What exactly are we looking for here? Well think about it-- we need to iterate over each row and for each movie title we want the rating and the year it was released.
- What do think? There is a `tbody` element with a class of 	`lister_list` which selects the entire row. We see that each row inside of the `tbody` element has a `tr` of class `odd`. Thats what we need!
+ What do think? There is a `tbody` element with a class of `lister_list` which selects the entire row. We see that each row inside of the `tbody` element has a `tr` of class `odd`. Thats what we need!
 
- Here is how to select and iterate through the table row:
+ Here is how we select and iterate through the table row:
 
 ```Ruby
  imdb.css("tbody.lister-list tr.odd").each do |film|
@@ -54,7 +54,7 @@ movie = {}
 		}
 	end
 ```
-Here we iterated through each table row making the title of the movie a key and then another nested array containing the different key value pair like rating, a link to the image of the movie and the year it came out.
+We've iterated through each table row making the title of the movie a key and the value a nested hash containing the different key/value pair like rating, a link to the image of the movie and the year it came out.
 
 Here is how the first row looks like:
 
@@ -65,5 +65,7 @@ Here is how the first row looks like:
    :date=>"(1994)",
    :rating=>"9.2"}
 ```
+In my next blog post I will go into more detail about how can we precisely target the content we want to extract.
 
+Cheers ;)
 
