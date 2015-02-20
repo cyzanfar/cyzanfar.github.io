@@ -28,7 +28,6 @@ So far, our file looks like this:
 ```Ruby
 require 'Nokogiri'
 require 'open-uri'
-html = File.read('fixtures/movie.html')
 	imdb = Nokogiri::HTML(open("http://www.imdb.com/chart/top"))
 ```
 Now, we need to declare our hash that will them contain the different element we want to scrap from this page:
@@ -66,3 +65,5 @@ Here is how the first row looks like:
    :date=>"(1994)",
    :rating=>"9.2"}
 ```
+
+
