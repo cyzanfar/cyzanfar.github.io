@@ -9,7 +9,10 @@ Not sure how that relates to finance but sure, I felt his pain. So I observe for
 
  **Scraping for Noobs**
 
-Scraping is the act of automating the process of extracting data from the internet.
+Scraping is the act of automating the process of extracting data from the internet. The example I gave of my friend is not an isolated case. Today, most jobs require you to look for data on the internet, mine it, then organize it into something that your boss can understand: a spreadsheet (more often than not in Excel).
+Today I am going to show you a different way of extracting data. It won't require you to scroll through pages, copy and paste the content you need. No, we are going to programatically extract the data we want. Bad ass, no? Yeah, Yeah, bad ass...
+
+
 Let's take a more interesting example than the Senior Centers in New York City. Let's say we want to extract the top 250 movie from [IMDB](http://www.imdb.com/chart/top?ref_=nv_ch_250_4)
 
 Here is how:
