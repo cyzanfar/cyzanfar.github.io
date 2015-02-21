@@ -10,12 +10,16 @@ Not sure how that relates to finance but sure, I felt his pain. So I observe for
  **Scraping for Noobs**
 
 Scraping is the act of automating the process of extracting data from the internet. The example I gave of my friend is not an isolated case. Today, most jobs require you to look for data on the internet, mine it, then organize it into something that your boss can understand: a spreadsheet (more often than not in Excel).
-Today I am going to show you a different way of extracting data. It won't require you to scroll through pages, copy and paste the content you need. No, we are going to programatically extract the data we want. Bad ass, no? Yeah, Yeah, bad ass...
+Today I am going to show you a different way of extracting data. It won't require you to scroll through pages, copy and paste the content you need. No, we are going to programmatically extract the data we want using the lovely Ruby language. Bad ass, no? Yeah, Yeah, bad ass...
 
 
 Let's take a more interesting example than the Senior Centers in New York City. Let's say we want to extract the top 250 movie from [IMDB](http://www.imdb.com/chart/top?ref_=nv_ch_250_4)
 
 Here is how:
+
+First of all you need a Ruby environment set up on your computer. If you haven't done that already go ahead and check out the [Ruby Documentation website](https://www.ruby-lang.org/en/documentation/installation/).
+
+Next, you'll need to install the [Nokogiri gem](http://www.nokogiri.org/tutorials/installing_nokogiri.html). I use Homebrew to manage my packages, if you're like me then type ```gem install nokogiri``` in your command prompt.
 
 Create a file called ```top_250_movie_imdb```. In the file, you need a way for your program to use the [Nokogiri](http://www.nokogiri.org/) library. At the top of your file ```require``` the Nokogiri gem as well as the ```open-uri``` gem, which is already pre-installed when you intall Ruby.
 
