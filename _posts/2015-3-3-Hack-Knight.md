@@ -14,7 +14,7 @@ Let's put ourselves in the shoes of a recently graduated Flatiron student whose 
  Seems simple... Now we need a way to sum all of the multiples.
 
  Here is how we start:
- 	<h5>1st step</h5
+ 	<h5>1st step</h5>
  Think object oriented. You want a class called `Multiples` for example, that takes a argument (the limit) when initialized.
 
  ```Ruby
@@ -46,6 +46,7 @@ Here we are using the comparator operator `||` (or) to check the value of the lo
 Remember that the method returns the last expression evaluated, so `@multiples` needs to be placed before the closure of the method `collect_multiples`
 	<h5>3rd step</h5>
 	Finally, we need to take the result of `collect_multiples` (which is an array) and sum all the elements in it.
+
 ```Ruby
 	def sum_multiples
 		collect_multiples.inject {|sum, x| sum + x}
@@ -53,6 +54,7 @@ Remember that the method returns the last expression evaluated, so `@multiples` 
 ```
 
 For the final step, let's prompt the user for the limit:
+
 ```Ruby
 class Multiples
 	attr_accessor :limit, :start, :multiples
@@ -77,6 +79,7 @@ end
 n = Multiples.new(@limit) # create new instance of the class Multiples
 puts "#{n.sum_multiples}" # print the sum of the multiples
 ```
+
 Try it out!
 In your bash run `ruby name_of_file.rb` and voila!
 If you give a limit of 1000 for example, you should get.... 233168. Bravo! you got it ;)
