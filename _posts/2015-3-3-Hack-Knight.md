@@ -57,7 +57,7 @@ For the final step, let's prompt the user for the limit:
 
 ```Ruby
 class Multiples
-	attr_accessor :limit, :start, :multiples
+	attr_accessor :limit, :multiples
 	def initialize(limit)
 		@limit = gets.chomp.to_i # prompt user and convert input into an Fixnum
 		@multiples = []
