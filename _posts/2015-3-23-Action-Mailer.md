@@ -5,7 +5,8 @@ title: Understanding Action Mailer
 
 When building a web application you should think about all the interactions/events that comprise your site. Your goal is generally to have a high user retention rate. As a developer/website owner, you want your users to interact as much as possible on your website without feeling the need to leave or use other third party services.
 
-Let's take a simple (but important) example: <strong>Mailing</strong>
+Let's take a simple (but important) example: <strong>Mailing</strong>.
+
 Imagine for a second that you are a user of a particular website and you need to send an email to the technical team about a bug or something (who cares... at this point you just want to contact them).
 It would be kind of (super) annoying to copy and paste the websites contact email into your own personal email service (Gmail, Outlook, etc.). Again, don't forget that your goal is to <strong>KEEP</strong> the user on your website. You don't want them to open up Gmail... No! What you need is a simple way for users to contact you directly via the website.
 
@@ -39,7 +40,7 @@ rails generate devise User
 And now, of course, run `rake db:migrate` to add the new users table to your `schema`!
 Voila! you now have access to super useful helper methods and call backs:
 
-`before_action :authenticate_user!` ---> In your controller (assuming your devise model is User). This will set a before_action that will ask for user authentication before an action. You can put it in any controller you want. For example I set up mine in my `welcomeController` so that a user will be ask to authenticate him/herself at the `welcome#index` route.
+`before_action :authenticate_user!` ---> In your controller (assuming your devise model is User). This will set a before_action that will ask for user authentication before an action. You can put it in any controller you want. For example I set up mine in my `welcomeController`.
 
 `user_signed_in?` --> check if a user is signed in...
 
@@ -62,13 +63,13 @@ Ex:
 Ex:
 
 ```Ruby
-<div c<a href="https://github.com/plataformatec/devise#controller-filters-and-helpers" lass="form-group">
+<div <a href="https://github.com/plataformatec/devise#controller-filters-and-helpers" lass="form-group">
       <div class="col-lg-10">
         <input type="hidden" class="form-control" id="inputEmail" name="email[user_email]" value="<%= current_user.email %>">
       </div>
     </div>
 ```
-Here I created an input field where the value is the current user's email. You'll in a bit how this can quite useful (hint: `input type="hidden"`).
+Here I created an input field where the value is the current user's email. You'll see in a bit how this can be quite useful (hint: `input type="hidden"`).
 
 
 There are a bunch of other helpers but for the purpose of this blog post i'll leave them aside. Feel free to take a look at them <a href="https://github.com/plataformatec/devise#controller-filters-and-helpers">here</a>.
@@ -141,13 +142,13 @@ post '/mailers/create' => 'mailers#create'
 </form>
 ```
 What's going on here... For the purpose of this blog post, we are dealing with users who want to contact a shelter right from the pets show page. Some of our fields here are hidden (`type="hidden"`). Why is that?
-Well because the user is sending an email to a particular shelter from the pet show page, we do not need to display the shelter's email. We have already associated pets with shelters where pets `belong_to` a shelter and each shelter, well, has a contact email.
+Well, because the user is sending an email to a particular shelter from the pet show page, we do not need to display the shelter's email. We have already associated pets with shelters where pets `belong_to` a shelter and each shelter, well, has a contact email.
 Here, the only thing we want the user to fill in is the actual content of the email.
 
 ```Ruby
 <textarea class="form-control" rows="3" id="textArea" name="email[content]">Hello, <%= @pet.shelter.name %> I am interested in adopting <%= @pet.name %></textarea>
 ```
-We are simply prefilling the 	`textarea` with relevant information so as to make it easier for the user.
+We are simply prefilling the 	`textarea` with relevant information so as to provide the user with some context.
 
 Awesome! look at our super params:
 
@@ -207,7 +208,7 @@ This one line here `Mailer.contact_shelter(@shelter_email, @content, @subject, @
 
 YES!! we are almost done.
 Last but not least we need to set up the right email protocol
-In the `config/environments/development.rb` configure your mailer so that it uses the smtp protocol:
+in `config/environments/development.rb` to configure your mailer so that it uses the smtp protocol:
 
 ```Ruby
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
@@ -247,11 +248,16 @@ This is how I set up my mailer view:
 </html>
 ```
 
-So the action here is this:
+So the action here are the following:
+
 --User fills in the content of the email.
+
 --Submits the email
+
 --email is sent to the shelters email
+
 --Shelters can directly reply to the user
+
 
 TAADAAA! Don't forget to check out <a href="http://guides.rubyonrails.org/action_mailer_basics.html">Action Mailer Basics</a> documentation if you are confused by what I am writing (It's pretty clear in my head but it might not reflect well on paper...)
 
