@@ -3,18 +3,18 @@ layout: post
 title: Understanding Action Mailer
 ---
 
-When building a web application you should think about all the interactions/events that comprise your site. Your goal is generally to have a high user retention rate. As a developper/website owner, you want your users to interact as much as possible on your website without feeling the need to leave or use other third party services.
+When building a web application you should think about all the interactions/events that comprise your site. Your goal is generally to have a high user retention rate. As a developer/website owner, you want your users to interact as much as possible on your website without feeling the need to leave or use other third party services.
 
 Let's take a simple (but important) example: <strong>Mailing</strong>
-Imagine for a second that you are a user of a perticular website and you need to send an email to the technical team about a bug or something (who cares... at this point you just want to contact them).
-It would be kind of (super) ennoying to copy and paste the websites contact email into your own personal email service (Gmail, Outlook, etc...). Again, don't forget that your goal is to <strong>KEEP</strong> the user on your website. You don't want them to open up Gmail... No! What you need is a simple way for users to contact you directly via the website.
+Imagine for a second that you are a user of a particular website and you need to send an email to the technical team about a bug or something (who cares... at this point you just want to contact them).
+It would be kind of (super) annoying to copy and paste the websites contact email into your own personal email service (Gmail, Outlook, etc.). Again, don't forget that your goal is to <strong>KEEP</strong> the user on your website. You don't want them to open up Gmail... No! What you need is a simple way for users to contact you directly via the website.
 
 Today I am going to show you how you can implement such feature using Action Mailer in your Ruby on Rails web app. Go take a look at the <a href="http://guides.rubyonrails.org/action_mailer_basics.html">Action Mailer Basics</a> documentation to familiarize yourself with the different features it provides.
 
 
-<h1>User Authentification</h1>
+<h1>User Authentication</h1>
 
-Let's take this step by step. If you are already using the <a href="https://github.com/plataformatec/devise"> Devise Gem</a> to authentificate users, skip this part and go right to the <strong>User Mailer</strong> section.
+Let's take this step-by-step. If you are already using the <a href="https://github.com/plataformatec/devise"> Devise Gem</a> to authenticate users, skip this part and go right to the <strong>User Mailer</strong> section.
 
 
 ----<strong>Step 1</strong>
@@ -37,9 +37,9 @@ rails generate devise User
  This generator will also configure your 7 RESTFUL routes so that it point to the Devise controller. Go take a look: `config/routes.rb`.
 
 And now, of course, run `rake db:migrate` to add the new users table to your `schema`!
-Voila! you now have access to super usefull helper methods and call backs:
+Voila! you now have access to super useful helper methods and call backs:
 
-`before_action :authenticate_user!` ---> In your controller (assuming your devise model is User). This will set a before_action that will ask for user authentification before an action. You can put it in any controller you want. For example I set up mine in my `welcomeController` so that a user will be ask to authentificate him/herself at the `welcome#index` route.
+`before_action :authenticate_user!` ---> In your controller (assuming your devise model is User). This will set a before_action that will ask for user authentication before an action. You can put it in any controller you want. For example I set up mine in my `welcomeController` so that a user will be ask to authenticate him/herself at the `welcome#index` route.
 
 `user_signed_in?` --> check if a user is signed in...
 
@@ -68,7 +68,7 @@ Ex:
       </div>
     </div>
 ```
-Here I created an input field where the value is the current user's email. You'll in a bit how this can quite usefull (hint: `input type="hidden"`).
+Here I created an input field where the value is the current user's email. You'll in a bit how this can quite useful (hint: `input type="hidden"`).
 
 
 There are a bunch of other helpers but for the purpose of this blog post i'll leave them aside. Feel free to take a look at them <a href="https://github.com/plataformatec/devise#controller-filters-and-helpers">here</a>.
@@ -98,7 +98,7 @@ create    test/mailers/previews/user_mailer_preview.rb
 ```
  As you can see, you can generate mailers just like you do for other generators. Mailers are similar to controllers in that you get a mailer, a directory for views, and a test.
 
- Ok, now lets tackle this from the buttom up. First we need to set up our routes so that a user can 'POST' an email to a `create` action in the Mailers Controller. This `create` method will take the params the user passed into the form and utilise it to send the email with the appropriate content.
+ Ok, now lets tackle this from the bottom up. First we need to set up our routes so that a user can 'POST' an email to a `create` action in the Mailers Controller. This `create` method will take the params the user passed into the form and utilise it to send the email with the appropriate content.
 
  In `config/routes.rb`
 
@@ -141,7 +141,7 @@ post '/mailers/create' => 'mailers#create'
 </form>
 ```
 What's going on here... For the purpose of this blog post, we are dealing with users who want to contact a shelter right from the pets show page. Some of our fields here are hidden (`type="hidden"`). Why is that?
-Well because the user is sending an email to a perticular shelter from the pet show page, we do not need to display the shelter's email. We have already associated pets with shelters where pets `belong_to` a shelter and each shelter, well, has a contact email.
+Well because the user is sending an email to a particular shelter from the pet show page, we do not need to display the shelter's email. We have already associated pets with shelters where pets `belong_to` a shelter and each shelter, well, has a contact email.
 Here, the only thing we want the user to fill in is the actual content of the email.
 
 ```Ruby
@@ -182,7 +182,7 @@ class Mailer < ActionMailer::Base
 
 end
 ```
-This is pretty straighforward. We have a `contact_shelter` method that takes in 4 arguments which are the values of the params passed into the form.
+This is pretty straightforward. We have a `contact_shelter` method that takes in 4 arguments, which are the values of the params passed into the form.
 
 Jumping to our `MailersController`:
 
@@ -253,7 +253,7 @@ So the action here is this:
 --email is sent to the shelters email
 --Shelters can directly reply to the user
 
-TAADAAA! Don't forget to check out <a href="http://guides.rubyonrails.org/action_mailer_basics.html">Action Mailer Basics</a> documentation if you are confused by what I am writting (It's pretty clear in my head but it might not reflect well on paper...)
+TAADAAA! Don't forget to check out <a href="http://guides.rubyonrails.org/action_mailer_basics.html">Action Mailer Basics</a> documentation if you are confused by what I am writing (It's pretty clear in my head but it might not reflect well on paper...)
 
 Love you all and <3 Ruby
 
