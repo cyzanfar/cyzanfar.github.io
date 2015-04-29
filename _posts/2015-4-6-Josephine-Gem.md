@@ -7,7 +7,7 @@ Recently I've been starting to mess around with Ruby Gems and try making one of 
 
 Ok, so it's time for us to make our first Gem, Josephine (my girlfriend name AKA hopeless romantic). We are going to build it from scratch without using the `bundler` gem which  auto-populate the files and folders you'll need and initialize a git repository for you. A good reference for building gems is the [RubyGems.org](http://guides.rubygems.org/make-your-own-gem/) website. The [RubyGems.org](https://rubygems.org/) is the Ruby community's gem hosting service. I will publish my gem there and anybody can view it and install it from the website.
 
-What is Josephine? well, it's a Ruby gem that calculates number of files, total lines of code, comments, line spacing and average LOC.
+What is Josephine? well, it's a Ruby gem that calculates the number of files, total lines of code, comments, line spacing and average LOC.
 
 ```
 % tree
