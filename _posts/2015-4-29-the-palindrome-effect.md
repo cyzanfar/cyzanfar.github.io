@@ -3,7 +3,7 @@ layout: post
 title: Palindrome solver
 ---
 
-Today I had a phone interview where I was asked to explain the logic I would implement to determine if a word is a [palindrome](http://en.wikipedia.org/wiki/Palindrome). A palindrome is a string that reads backwards and frontward. For example **civic** or [aibohphobia](http://www.rinkworks.com/words/palindromes.shtml).
+Today I had a phone interview where I was asked to explain the logic I would implement to determine if a word is a [palindrome](http://en.wikipedia.org/wiki/Palindrome). A palindrome is a string that reads backward and frontward. For example **civic** or [aibohphobia](http://www.rinkworks.com/words/palindromes.shtml).
 
 Let's build an algorithm that will take a string and return true if it's a palindrome and false if it isn't.
 
