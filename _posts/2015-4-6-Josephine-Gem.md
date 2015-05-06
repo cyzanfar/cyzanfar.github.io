@@ -154,7 +154,7 @@ $ gem install ./josephine-0.0.0.gem
 		1 gem installed
 ```
 
-To share your gem on the [RubyGems](https://rubygems.org/) you need to [create and account](https://rubygems.org/sign_up) and set up your computer with you RubyGems account via this command:
+To share your gem on the [RubyGems](https://rubygems.org/) platform, you need to [create an account](https://rubygems.org/sign_up) and set up your computer with your RubyGems account via this command:
 
 
 ```
@@ -162,7 +162,7 @@ $ curl -u qrush https://rubygems.org/api/v1/api_key.yaml >
 ~/.gem/credentials; chmod 0600 ~/.gem/credentials
 ```
 
-when your are finish with the setup, you can publish your gem to RubyGems
+when you are finish with the setup, you can publish your gem to RubyGems by running this command:
 
 ```
 $ gem push josephine-0.0.0.gem

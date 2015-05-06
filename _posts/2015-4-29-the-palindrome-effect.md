@@ -32,7 +32,7 @@ Although it gets the job done, I don't think it helps me understand the true log
 
 #### Breaking it down
 
-Another way to think about a palindrome word is by breaking down the string into an array of characters each representing a position in the list. For example, the word "civic" split into an array gives us ["c","i","v","i","c"]. We can then check if the rear character "c" is equal to the front character "c" removing the rear and front every time condition is true. See [Figure](http://interactivepython.org/runestone/static/pythonds/BasicDS/PalindromeChecker.html) below.
+Another way to think about a palindrome word is by breaking down the string into an array of characters each representing a position in the list. For example, the word "civic" split into an array gives us ["c","i","v","i","c"]. We can then check if the rear character "c" is equal to the front character "c" removing the rear and front every time the condition is true. See [Figure](http://interactivepython.org/runestone/static/pythonds/BasicDS/PalindromeChecker.html) below.
 
 ![alt text](http://interactivepython.org/runestone/static/pythonds/_images/palindromesetup.png "palindrome")
 
